@@ -1,0 +1,6 @@
+#By: Luis Herrera
+#Enter specified servers that need DHCP features installed
+$servers = ('01sp-dhcpinf01', '02sp-dhcpinf01', '06sp-dhcpinf01', '06sp-dhcpinf02', '08sp-dhcpinf01', '14sp-dhcpinf01', '17sp-dhcpinf01', '18sp-dhcpinf01', '21sp-dhcpinf01', '31sp-dhcpinf01', '34sp-dhcpinf01', '35sp-dhcpinf01','35sp-dhcpinf02', '37sp-dhcpinf01', '39sp-dhcpinf01', '41sp-dhcpinf01', '43sp-dhcpinf01', '43sp-dhcpinf02', '48sp-dhcpinf01', '56sp-dhcpinf01', '60sp-dhcpinf01', '61sp-dhcpinf01', '61sp-dhcpinf02', '63sp-dhcpinf01', '66sp-dhcpinf01', '77sp-dhcpinf01' , '80sp-dhcpinf01', '80sp-dhcpinf02', '82sp-dhcpinf01', '104sp-dhcpinf01', '104sp-dhcpinf02', '112sp-dhcpinf01', '206sp-dhcpinf01')
+#The Function goes through each server and installs DHCP with admin tools and sub features
+foreach($server in $servers){Install-WindowsFeature DHCP,RSAT-DHCP -IncludeManagementTools -IncludeAllSubFeature  -ComputerName $server}
+#Use pipe and select/display/ ft -Autosize for better readability 
